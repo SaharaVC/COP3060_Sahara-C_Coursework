@@ -9,11 +9,114 @@
   
 <body>
     <h1>About Me</h1>
-    <p>Hello, my name is Sahara Calloway, a second-year Computer Science major from Atlanta, GA. I'm not completely
-      sure what I want to pursue a career in, but I'm leaning towards cybersecurity. I'm also interested in coding,
-      and depending on how well I do in this course, I could be convinced to pursue web development. Some of my personal
-      interests are listening to all genres of music, playing video games, watching anime, collecting DVDs, and collecting 
-      the stuffed animal series, called 'Fugglers'.</p>
+    <div>
+      <p>Hello, my name is Sahara Calloway, a second-year Computer Science major from Atlanta, GA. I'm not completely
+        sure what I want to pursue a career in, but I'm leaning towards cybersecurity. I'm also interested in coding,
+        and depending on how well I do in this course, I could be convinced to pursue web development. 
+    </div>
+
+  <div>
+    <h2>Pesonal Interest Table</h2>
+      <table border="1">
+        <tr>
+          <th>Interest</th>
+          <th>Description</th>
+          <th>Passion Level</th>
+        </tr>
+
+        <tr>
+          <td>Music</td>
+          <td>I love listening to all genres of music. My top artists of 2025 were Beyonce,
+              tricot, Red Velvet, Kendrick Lamar, and Doechii. I have a playlist with over 2000
+              songs at almost 150 hours in length.</td>
+          <td>High</td>
+        </tr>
+
+        <tr>
+          <td>Video Games</td>
+          <td>I mostly play video games with my mom like Mario and Overcooked, but some of my favorite
+              games are the Rhythm Heaven series, the Katamari series, the Yakuza series, Project Diva,
+              and Cookie Run Kingdom</td>
+          <td>Mild</td>          
+        </tr>
+
+        <tr>
+          <td>Anime</td>
+          <td>I started watching anime when I was 10 and one of my favorite shows is Samurai Champloo.
+            I've fallen out of anime recently, but I'm making an effort this year to watch more shows</td>
+          <td>Mild</td>
+        </tr>
+
+        <tr>
+          <td>Collecting DVDs</td>
+          <td>I collect DVD sets of old adult animated shows because I love older adult animated shows and
+              physical media. The shows I have DVDs for are Samurai Champloo, South Park, Oblongs, Home Movies,
+              Metalocaplypse, Duckman, Dilbert, and Drawn Together. It's a hard hobby to keep up with because a
+              lot of DVDs are hard to find, but I plan on collecting many more</td>
+          <td>High</td>
+        </tr>
+
+        <tr>
+          <td>Collecting Fugglers</td>
+          <td>I have over 40 Fugglers, which are stuffed animals with human like teeth and either button eyes or
+              human like eyes. A lot of people think they're creepy or ugly, but I like how unique they are and
+              am always on the hunt for a new series to collect</td>
+          <td>High</td>
+        </tr>
+      </table>    
+    </div>
+
+    <div>
+      <h2>Sign up for more updates!</h2>
+      <form method="post" action="#">
+        <div>
+          <label for="firstName">First Name: </label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        </div>
+
+        <div>
+          <label for="lastName">Last Name: </label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        </div>
+
+        <div>
+          <label for="email">Email Address: </label>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div>
+          <label for="password">Password: </label>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div>
+          <p>Sign up for Newsletter? 
+          <input type="radio" id="yes" name="news" value="y"> <label for="yes">Yes</label>
+          <input type="radio" id="no" name="news" value="n"> <label for="no">No</label>
+        </div>
+
+        <div>
+          <p>Recieve email updates?
+          <input type="checkbox" id="updates" name="updates">
+        </div>
+
+        <div>
+          <p>Select your browser: 
+          <select name="browser" id="browser">
+            <option value="chrome">Chrome</option>
+            <option value="intExp">Internet Explorer</option>
+            <option value="fireFox">FireFox</option>
+            <option value="mobile">Mobile</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+ 
 </body>
   
 </html>
