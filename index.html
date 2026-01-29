@@ -9,11 +9,68 @@
   
 <body>
     <h1>About Me</h1>
-    <p>Hello, my name is Sahara Calloway, a second-year Computer Science major from Atlanta, GA. I'm not completely
-      sure what I want to pursue a career in, but I'm leaning towards cybersecurity. I'm also interested in coding,
-      and depending on how well I do in this course, I could be convinced to pursue web development. Some of my personal
-      interests are listening to all genres of music, playing video games, watching anime, collecting DVDs, and collecting 
-      the stuffed animal series, called 'Fugglers'.</p>
+    <div>
+      <p>Hello, my name is Sahara Calloway, a second-year Computer Science major from Atlanta, GA. I'm not completely
+        sure what I want to pursue a career in, but I'm leaning towards cybersecurity. I'm also interested in coding,
+        and depending on how well I do in this course, I could be convinced to pursue web development. Some of my personal
+        interests are listening to all genres of music, playing video games, watching anime, collecting DVDs, and collecting 
+        the stuffed animal series, called 'Fugglers'.</p>
+    </div>
+
+    <div>
+      <h2>Sign up for more updates!</h2>
+      <form method="post" action="#">
+        <div>
+          <label for="firstName">First Name: </label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        </div>
+
+        <div>
+          <label for="lastName">Last Name: </label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        </div>
+
+        <div>
+          <label for="email">Email Address: </label>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div>
+          <label for="password">Password: </label>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div>
+          <label for="news">Sign up for Newsletter? </label>
+          <input type="radio" id="yes" name="news" value="y"/> <label for="yes">Yes</label>
+          <input type="radio" id="no" name="news" value="n"/> <label for="no">No</label>
+        </div>
+
+        <div>
+          <label for="subs">Recieve email updates? </label>
+          <input type="checkbox" id="updates" name="updates"/>
+        </div>
+
+        <div>
+          <label for="browser">Select your browser: </label>
+          <select name="browser" id="browser">
+            <option value="chrome">Chrome</option>
+            <option value="intExp">Internet Explorer</option>
+            <option value="fireFox">FireFox</option>
+            <option value="mobile">Mobile</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      
+    </div>
+
+
+  
 </body>
   
 </html>
