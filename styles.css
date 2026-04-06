@@ -33,3 +33,22 @@ td {
   color: #cccccc;
 }
 
+input, select, button {
+  margin-top: 6px;
+  font-family: "Tahoma", "Helvetica", serif;
+}
+
+button {
+  margin-top: 12px;
+  padding: 8px 20px;
+  background-color: #C9A84C;
+  color: #080606;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #C9A84C;
+  font-style: italic;
+}
