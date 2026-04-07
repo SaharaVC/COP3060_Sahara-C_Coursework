@@ -85,3 +85,68 @@ async function fetchPosts() {
     handleError("Could not load posts. Check your connection and try again.", err);
   }
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+  renderInterestList();
+ 
+  // Listener 1: form submit — email validation
+  // Uses your existing <form> and <input id="email"> from index.html
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+ 
+      const emailVal = document.getElementById("email")?.value.trim() || "";
+ 
+      // Must contain "@", ".", and be at least 6 chars
+      const isValid = emailVal.includes("@") &&
+                      emailVal.includes(".") &&
+                      emailVal.length >= 6;
+ 
+      if (isValid) {
+        setStatus(`✓ "${emailVal}" is valid. Submission ready.`, "success");
+      } else {
+        setStatus("✗ Enter a valid email address (e.g. name@example.com).", "error");
+      }
+    });
+  }
+ 
+  // Listener 2: email input — live feedback while typing
+  const emailInput = document.getElementById("email");
+  if (emailInput) {
+    emailInput.addEventListener("input", () => {
+      const val = emailInput.value.trim();
+ 
+      if (val.length === 0) {
+        setStatus("", "info");
+      } else if (val.includes("@") && val.includes(".") && val.length >= 6) {
+        setStatus("✓ Email looks good.", "success");
+      } else {
+        setStatus("Keep typing — not a valid email yet.", "info");
+      }
+    });
+  }
+ 
+  // Listener 3: fetch button click
+  const fetchBtn = document.getElementById("fetch-btn");
+  if (fetchBtn) {
+    fetchBtn.addEventListener("click", () => {
+      fetchPosts();
+    });
+  }
+ 
+  // Sort dropdown: re-render cached posts with new order
+  const sortSelect = document.getElementById("sort-select");
+  if (sortSelect) {
+    sortSelect.addEventListener("change", () => {
+      if (!fetchedPosts) {
+        setStatus("Load posts first before sorting.", "info");
+        return;
+      }
+      renderList(filterData(fetchedPosts, sortSelect.value));
+    });
+  }
+ 
+});
