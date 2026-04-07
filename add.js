@@ -19,3 +19,22 @@ const newsletterOff = newsletterOptedIn === false;
 if (ownerName.length > 0 && ownerInfo.major !== undefined) {
   console.log(`Owner: ${ownerName} | Major: ${ownerInfo.major} | Total interest chars: ${totalChars}`);
 }
+
+/**
+ * renderInterestList
+ * Loops over topInterests and builds a <ul> inside #interest-list.
+ */
+function renderInterestList() {
+  const container = document.getElementById("interest-list");
+  if (!container) return;
+ 
+  const ul = document.createElement("ul");
+ 
+  for (let i = 0; i < topInterests.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = topInterests[i];
+    ul.appendChild(li);
+  }
+ 
+  container.appendChild(ul);
+}
