@@ -38,3 +38,17 @@ function renderInterestList() {
  
   container.appendChild(ul);
 }
+
+/**
+ * setStatus
+ * writes message into #status with a visual type class
+ * @param {string} message
+ * @param {"info"|"success"|"error"} type
+ */
+function setStatus(message, type = "info") {
+  const el = document.getElementById("status");
+  if (!el) return;
+  el.textContent = message;
+  el.className = "";
+  if (type !== "info") el.classList.add(`status-${type}`);
+}
