@@ -52,3 +52,36 @@ function setStatus(message, type = "info") {
   el.className = "";
   if (type !== "info") el.classList.add(`status-${type}`);
 }
+
+const API_BASE = "https://jsonplaceholder.typicode.com/posts";
+ 
+async function fetchPosts() {
+  setStatus("Loading...", "info");
+  document.getElementById("results").innerHTML = "";
+ 
+  const url = buildUrl(API_BASE, 10);
+ 
+  try {
+    const response = await fetch(url);
+ 
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+ 
+    const data = await response.json();
+    fetchedPosts = data;b 
+ 
+    if (!Array.isArray(fetchedPosts) || fetchedPosts.length === 0) {
+      handleError("The API returned no posts.");
+      return;
+    }
+ 
+    setStatus(`Loaded ${fetchedPosts.length} posts.`, "success");
+ 
+    const sortOrder = document.getElementById("sort-select")?.value || "asc";
+    renderList(filterData(fetchedPosts, sortOrder));
+ 
+  } catch (err) {
+    handleError("Could not load posts. Check your connection and try again.", err);
+  }
+}
