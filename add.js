@@ -91,8 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
  
   renderInterestList();
  
-  // Listener 1: form submit — email validation
-  // Uses your existing <form> and <input id="email"> from index.html
   const form = document.querySelector("form");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -113,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
  
-  // Listener 2: email input — live feedback while typing
   const emailInput = document.getElementById("email");
   if (emailInput) {
     emailInput.addEventListener("input", () => {
@@ -129,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
  
-  // Listener 3: fetch button click
   const fetchBtn = document.getElementById("fetch-btn");
   if (fetchBtn) {
     fetchBtn.addEventListener("click", () => {
@@ -137,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
  
-  // Sort dropdown: re-render cached posts with new order
   const sortSelect = document.getElementById("sort-select");
   if (sortSelect) {
     sortSelect.addEventListener("change", () => {
